@@ -1,5 +1,6 @@
 import { google } from 'googleapis'
 import { runWithConcurrencyLimit } from '@/lib/concurrency'
+import { gmail_v1 } from 'googleapis'
 
 export function getGmailClient(refreshToken: string) {
   const oauth2Client = new google.auth.OAuth2(
@@ -13,10 +14,9 @@ export function getGmailClient(refreshToken: string) {
 }
 
 // Pulls the header value we want out of Gmail's payload.headers array
-function getHeader(headers: { name: string; value: string }[], name: string) {
-  return headers.find((h) => h.name.toLowerCase() === name.toLowerCase())?.value ?? null
+function getHeader(headers: gmail_v1.Schema$MessagePartHeader[], name: string) {
+  return headers.find((h) => h.name?.toLowerCase() === name.toLowerCase())?.value ?? null
 }
-
 // Message-ID headers look like "<abc123@mail.gmail.com>" — strip the angle brackets
 function cleanMessageId(raw: string | null) {
   if (!raw) return null
