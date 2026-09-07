@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# NUDGE
+
+### Intelligent Attention Management
+
+**NUDGE** is a smart task-prioritization web application that helps users identify **what needs their attention right now**.
+
+Unlike traditional to-do apps that simply display tasks, NUDGE evaluates factors such as **urgency, importance, and deadlines** to organize tasks by attention level.
+
+## Features
+
+* **Smart Prioritization** — Identifies tasks that require immediate attention.
+* **Attention Dashboard** — Highlights the most important tasks first.
+* **Today's NUDGE** — Shows tasks that should be addressed today.
+* **Task Management** — Add, edit, complete, and delete tasks.
+* **Priority Levels** — Organizes tasks into Needs Attention, Coming Up, and Under Control.
+
+## How It Works
+
+```text
+Task
+ ↓
+Deadline + Importance + Urgency
+ ↓
+Priority Calculation
+ ↓
+Attention Level
+ ↓
+NUDGE Dashboard
+```
+
+Instead of asking:
+
+> **"What tasks do I have?"**
+
+NUDGE asks:
+
+> **"What should I focus on right now?"**
+
+## Tech Stack
+
+* **Frontend:** React / JavaScript
+* **Backend:** Node.js / Express
+* **Database:** Supabase
+* **Deployment:** Vercel
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+git clone https://github.com/Hadia-Khan-version/Nudge.git
+cd nudge
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Future Plans
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+* AI-powered task prioritization
+* Calendar integration
+* Intelligent notifications
+* Productivity analytics
+* Adaptive prioritization based on user behavior
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Don't manage everything. Know what matters. Get NUDGED.
