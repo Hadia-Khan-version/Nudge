@@ -50,12 +50,18 @@ export function useNudgeData() {
     const archivedIds = new Set((signals ?? []).map((s) => s.email_id))
 
     const { data } = await supabase
-      .from('emails')
-      .select(SELECT)
-      .order('received_at', { ascending: false })
+  .from('emails')
+  .select(SELECT)
+  .order('received_at', { ascending: false })
 
-    const now = new Date()
-    const visible = ((data as Email[]) ?? []).filter((email) => {
+const rows = data ?? []
+const normalized: Email[] = rows.map((row) => ({
+  ...row,
+  email_analysis: Array.isArray(row.email_analysis) ? (row.email_analysis[0] ?? null) : row.email_analysis,
+}))
+
+const now = new Date()
+const visible = normalized.filter((email) => {
       if (archivedIds.has(email.id)) return false
       const snoozedUntil = email.email_analysis?.snoozed_until
       if (snoozedUntil && new Date(snoozedUntil) > now) return false
