@@ -40,13 +40,13 @@ NUDGE asks:
 
 * **Frontend:** React / JavaScript
 * **Backend:** Node.js / Express
-* **Database:** [Your database]
-* **Deployment:** [Your platform]
+* **Database:** Supabase
+* **Deployment:** Vercel
 
 ## Getting Started
 
 ```bash
-git clone https://github.com/your-username/nudge.git
+git clone https://github.com/Hadia-Khan-version/Nudge.git
 cd nudge
 npm install
 npm run dev
